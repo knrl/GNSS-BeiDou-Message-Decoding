@@ -1,2 +1,2 @@
 # Decoding-BeiDou-Navigation-Message
-Decoding u-blox GNSS receiver dependent raw data from UBX-RXM-SFRBX messages. Decoding and scaling BeiDou B1I D1 navigation message format.
+Decoding BeiDou navigastion messages from u-blox GNSS receiver raw data. Decoding and scaling BeiDou B1I D1 navigation message format.
