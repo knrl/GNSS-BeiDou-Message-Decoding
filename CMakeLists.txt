@@ -1,13 +1,22 @@
-cmake_minimum_required(VERSION 3.12) # version can be different
+cmake_minimum_required(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+project(bds_msg_decoder)
 
-set(CMAKE_CXX_STANDARD 17)
+set(BUILD_TEST 0)
+set(BUILD_FOR_PROFILING 0)
 
-project(my_cpp_project) #name of your project
+add_subdirectory(decoder)
 
-add_subdirectory(googletest) # add googletest subdirectory
+if (BUILD_TEST)
+    add_subdirectory(test)
+else()
+    add_subdirectory(app)
+endif()
 
-include_directories(googletest/googletest/include) # this is so we can #include <gtest/gtest.h>
-
-add_executable(run_tests test_main.cpp src/beidou_subframe.cpp src/navigation_engine.cpp) # add this executable
-
-target_link_libraries(run_tests PRIVATE gtest) # link google test to this executable
+if (BUILD_FOR_PROFILING)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -O2 -pg")
+    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pg")
+    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -pg")
+    message("Profiling Options: Enabled")
+else()
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
+endif()

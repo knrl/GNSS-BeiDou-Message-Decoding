@@ -4,7 +4,7 @@
 *
 ------------------------------------------------------------------------------*/
 
-#include "../include/beidou_subframe.hpp"
+#include "beidou_subframe.hpp"
 #include <cmath>
 
 void BeiDouSubframe<TrackingCode::B1I_D1, Subframe::one, PageId::None>::anlamlandir(BeiDouNavData&	 data, uint8_t svId)

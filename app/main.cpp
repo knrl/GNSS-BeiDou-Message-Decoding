@@ -5,7 +5,7 @@
 ------------------------------------------------------------------------------*/
 
 #include <fstream>
-#include "include/navigation_engine.hpp"
+#include "navigation_engine.hpp"
 
 typedef struct{
     uint8_t gnssId;

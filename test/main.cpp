@@ -4,7 +4,7 @@
 *
 ------------------------------------------------------------------------------*/
 
-#include "include/navigation_engine.hpp"
+#include "navigation_engine.hpp"
 #include "gtest/gtest.h"
 
 /**

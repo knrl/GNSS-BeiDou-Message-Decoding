@@ -6,7 +6,7 @@
 
 #include <iomanip>
 #include <fstream>
-#include "../include/navigation_engine.hpp"
+#include "navigation_engine.hpp"
 
 void NavEng<SatelliteSystem::BeiDou>::catch_subframe_data_D1 (const std::uint32_t(&word)[10], std::uint8_t svId)
 {
