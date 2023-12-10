@@ -141,7 +141,7 @@ TEST(D1_Test, subframe1_coz)
     payload.word[9] = 0x7ce21ed;
 
     /// ACT
-    BeiDouEng.D1_Subframe1.coz(payload.word);
+    BeiDouEng.D1_Subframe1.decode(payload.word);
 
     /// ASSERT
     EXPECT_EQ(payload.word[0], BeiDouEng.D1_Subframe1.word1.word);
@@ -174,7 +174,7 @@ TEST(D1_Test, subframe2_coz)
     payload.word[9] = 0x3f24394e;
 
     /// ACT
-    BeiDouEng.D1_Subframe1.coz(payload.word);
+    BeiDouEng.D1_Subframe1.decode(payload.word);
 
     /// ASSERT
     EXPECT_EQ(payload.word[0], BeiDouEng.D1_Subframe1.word1.word);

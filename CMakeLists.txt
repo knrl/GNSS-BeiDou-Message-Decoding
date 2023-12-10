@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
-project(bds_msg_decoder)
+project(bds_msg_decoder CXX)
 
 set(BUILD_TEST 0)
 set(BUILD_FOR_PROFILING 0)
 
 add_subdirectory(decoder)
+add_subdirectory(controller)
 
 if (BUILD_TEST)
     add_subdirectory(test)
